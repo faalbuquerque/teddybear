@@ -4,5 +4,8 @@ Rails.application.routes.draw do
   root 'main#index'
 
   resources :bears, only: [:index, :new, :create, :show, :update, :edit, :destroy]
+  resources :rabbits, only: [:index, :new, :create, :show, :update, :edit, :destroy]
+  resources :dogs, only: [:index, :new, :create, :show, :update, :edit, :destroy]
 
 end
+

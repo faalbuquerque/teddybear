@@ -1,0 +1,31 @@
+<p><%= link_to 'Voltar', root_path %></p>
+
+<p style='font-size:20px;'> Doguinhos &#128021; </p><hr>
+
+<p><%= link_to 'Novo dog ➕', new_dog_path %></p>
+
+<% @dogs.each do |dog|  %>
+
+  <div>
+    <p>Nome: <%= dog.name %></p>
+
+    <div>
+      Cor: 
+      <div style="border-radius:80%; 
+                  border:solid 1px; 
+                  width:15px; 
+                  height:15px;
+                  display: inline-block;
+                  background-color:<%= dog.color %>">
+      </div>
+    </div>
+
+    <p>Tamanho: <%= dog.size %></p>
+
+    <%= link_to 'Editar', edit_dog_path(dog)  %>
+    <%= link_to 'Apagar', dog_path(dog), method: 'delete' %>
+  </div><hr>
+
+<% end  %>
+
+

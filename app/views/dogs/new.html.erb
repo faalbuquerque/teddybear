@@ -1,27 +1,29 @@
-<p><%= link_to 'Voltar', bears_path %></p>
+<p><%= link_to 'Voltar', dogs_path %></p>
 
-<p style='font-size:20px;'> Alterar urso &#128059; </p><hr>
+<p style='font-size:20px;'> Cadastrar Dog &#128021; </p><hr>
 
-<% if @bear.errors.any? %>
+<% if @dog.errors.any? %>
 
-  <% @bear.errors.full_messages.each do |message| %>
+  <% @dog.errors.full_messages.each do |message| %>
     <p>O campo <%= t(message) %></p>
   <% end %>
 
 <% end %>
 
-<%= form_with model: @bear, local:true do |f| %>
+<%= form_with model: @dog, local:true do |f| %>
 
   <p>
     <%= f.label :name, 'Nome' %>
     <%= f.text_field :name %>
 
     <%= f.select(:size, ['Pequeno', 'Médio', 'Grande', 'Gigante'], {include_blank: 'Tamanho'}, { :style => '' }) %>
-   
+
     <%= f.label :color, 'Cor' %>
     <%= f.color_field(:color) %>
     
   </p><br>
 
-  <%= f.submit "Alterar" %>
+  <%= f.submit "Adicionar" %>
 <% end %>
+
+

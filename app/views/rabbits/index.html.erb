@@ -1,0 +1,31 @@
+<p><%= link_to 'Voltar', root_path %></p>
+
+<p style='font-size:20px;'> Coelhinhos &#128048; </p><hr>
+
+<p><%= link_to 'Novo coelho ➕', new_rabbit_path %></p>
+
+<% @rabbits.each do |rabbit|  %>
+
+  <div>
+    <p>Nome: <%= rabbit.name %></p>
+
+    <div>
+      Cor: 
+      <div style="border-radius:80%; 
+                  border:solid 1px; 
+                  width:15px; 
+                  height:15px;
+                  display: inline-block;
+                  background-color:<%= rabbit.color %>">
+      </div>
+    </div>
+
+    <p>Tamanho: <%= rabbit.size %></p>
+
+    <%= link_to 'Editar', edit_rabbit_path(rabbit)  %>
+    <%= link_to 'Apagar', rabbit_path(rabbit), method: 'delete' %>
+  </div><hr>
+
+<% end  %>
+
+

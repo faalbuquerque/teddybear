@@ -19,9 +19,11 @@
     <%= f.select(:size, ['Pequeno', 'Médio', 'Grande', 'Gigante'], {include_blank: 'Tamanho'}, { :style => '' }) %>
 
     <%= f.label :color, 'Cor' %>
-    <%= color_field(:color, :favorite_color) %>
+    <%= f.color_field(:color) %>
     
   </p><br>
 
   <%= f.submit "Adicionar" %>
 <% end %>
+
+

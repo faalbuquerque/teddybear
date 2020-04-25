@@ -1,0 +1,18 @@
+<p><%= link_to 'Voltar', rabbits_path %></p>
+
+<p style='font-size:20px;'> Coelhinho adicionado &#128048; </p><hr>
+
+<div>
+  <p>Nome: <%= @rabbit.name %></p>
+  <div>
+    Cor:
+    <div style="border-radius:80%; 
+                border:solid 1px; 
+                width:15px; 
+                height:15px;
+                display: inline-block;
+                background-color:<%= @rabbit.color %>">
+    </div>
+  </div>
+  <p>Tamanho: <%= @rabbit.size %></p>
+</div>

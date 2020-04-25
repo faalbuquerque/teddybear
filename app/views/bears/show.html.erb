@@ -4,6 +4,15 @@
 
 <div>
   <p>Nome: <%= @bear.name %></p>
-  <p>Cor: <%= @bear.color %></p>
+  <div>
+    Cor:
+    <div style="border-radius:80%; 
+                border:solid 1px; 
+                width:15px; 
+                height:15px;
+                display: inline-block;
+                background-color:<%= @bear.color %>">
+    </div>
+  </div>
   <p>Tamanho: <%= @bear.size %></p>
 </div>
