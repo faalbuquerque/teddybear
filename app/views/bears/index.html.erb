@@ -1,0 +1,18 @@
+<p><%= link_to 'Voltar', root_path %></p>
+
+<p style='font-size:20px;'> Ursinhos &#128059; </p><hr>
+
+<p><%= link_to 'Novo urso ➕', new_bear_path %></p>
+
+<% @bears.each do |bear|  %>
+
+  <div>
+    <p>Nome: <%= bear.name %></p>
+    <p>Cor: <%= bear.color %></p>
+    <p>Tamanho: <%= bear.size %></p>
+
+    <%= link_to 'Editar', edit_bear_path(bear)  %>
+    <%= link_to 'Apagar', bear_path(bear), method: 'delete' %>
+  </div><hr>
+
+<% end  %>

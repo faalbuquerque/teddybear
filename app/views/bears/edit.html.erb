@@ -1,0 +1,27 @@
+<p><%= link_to 'Voltar', bears_path %></p>
+
+<p style='font-size:20px;'> Alterar urso &#128059; </p><hr>
+
+<% if @bear.errors.any? %>
+
+  <% @bear.errors.full_messages.each do |message| %>
+    <p>O campo <%= t(message) %></p>
+  <% end %>
+
+<% end %>
+
+<%= form_with model: @bear, local:true do |f| %>
+
+  <p>
+    <%= f.label :name, 'Nome' %>
+    <%= f.text_field :name %>
+
+    <%= f.select(:size, ['Pequeno', 'Médio', 'Grande', 'Gigante'], {include_blank: 'Tamanho'}, { :style => '' }) %>
+   
+    <%= f.label :color, 'Cor' %>
+    <%= color_field(:color, :favorite_color) %>
+    
+  </p><br>
+
+  <%= f.submit "Alterar" %>
+<% end %>
