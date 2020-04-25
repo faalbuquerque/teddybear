@@ -22,7 +22,7 @@
 
     <p>Tamanho: <%= rabbit.size %></p>
 
-    <p>Imagem: <%= image_tag(rabbit.image_url(:thumb).to_s) %></p>
+    <div><%= image_tag(rabbit.image_url(:thumb).to_s) %></div>
 
     <%= link_to 'Editar', edit_rabbit_path(rabbit)  %>
     <%= link_to 'Apagar', rabbit_path(rabbit), method: 'delete' %>

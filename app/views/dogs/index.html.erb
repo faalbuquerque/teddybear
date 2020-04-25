@@ -22,7 +22,7 @@
 
     <p>Tamanho: <%= dog.size %></p>
 
-    <p>Imagem: <%= image_tag(dog.image_url(:thumb).to_s) %></p>
+    <div><%= image_tag(dog.image_url(:thumb).to_s) %></div>
 
     <%= link_to 'Editar', edit_dog_path(dog)  %>
     <%= link_to 'Apagar', dog_path(dog), method: 'delete' %>
