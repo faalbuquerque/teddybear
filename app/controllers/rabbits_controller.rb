@@ -40,7 +40,7 @@ class RabbitsController < ApplicationController
   private
 
   def rabbit_params
-    params.require(:rabbit).permit(:name, :color, :size)
+    params.require(:rabbit).permit(:name, :color, :size, :image)
   end
 
 end

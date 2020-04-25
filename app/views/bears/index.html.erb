@@ -2,7 +2,7 @@
 
 <p style='font-size:20px;'> Ursinhos &#128059; </p><hr>
 
-<p><%= link_to 'Novo urso ➕', new_bear_path %></p>
+<p><%= link_to 'Novo urso ➕', new_bear_path %></p><hr>
 
 <% @bears.each do |bear|  %>
 
@@ -21,6 +21,9 @@
     </div>
 
     <p>Tamanho: <%= bear.size %></p>
+
+    <p>Imagem: <%= image_tag(bear.image_url(:thumb).to_s) %></p>
+    
 
     <%= link_to 'Editar', edit_bear_path(bear)  %>
     <%= link_to 'Apagar', bear_path(bear), method: 'delete' %>

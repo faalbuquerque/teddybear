@@ -2,7 +2,7 @@
 
 <p style='font-size:20px;'> Coelhinhos &#128048; </p><hr>
 
-<p><%= link_to 'Novo coelho ➕', new_rabbit_path %></p>
+<p><%= link_to 'Novo coelho ➕', new_rabbit_path %></p><hr>
 
 <% @rabbits.each do |rabbit|  %>
 
@@ -21,6 +21,8 @@
     </div>
 
     <p>Tamanho: <%= rabbit.size %></p>
+
+    <p>Imagem: <%= image_tag(rabbit.image_url(:thumb).to_s) %></p>
 
     <%= link_to 'Editar', edit_rabbit_path(rabbit)  %>
     <%= link_to 'Apagar', rabbit_path(rabbit), method: 'delete' %>

@@ -2,7 +2,7 @@
 
 <p style='font-size:20px;'> Doguinhos &#128021; </p><hr>
 
-<p><%= link_to 'Novo dog ➕', new_dog_path %></p>
+<p><%= link_to 'Novo dog ➕', new_dog_path %></p><hr>
 
 <% @dogs.each do |dog|  %>
 
@@ -21,6 +21,8 @@
     </div>
 
     <p>Tamanho: <%= dog.size %></p>
+
+    <p>Imagem: <%= image_tag(dog.image_url(:thumb).to_s) %></p>
 
     <%= link_to 'Editar', edit_dog_path(dog)  %>
     <%= link_to 'Apagar', dog_path(dog), method: 'delete' %>

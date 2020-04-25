@@ -40,7 +40,7 @@ class BearsController < ApplicationController
   private
 
   def bear_params
-    params.require(:bear).permit(:name, :color, :size)
+    params.require(:bear).permit(:name, :color, :size, :image)
   end
 
 end
