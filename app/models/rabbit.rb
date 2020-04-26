@@ -6,10 +6,4 @@ class Rabbit < ApplicationRecord
   validates :color, presence: true
   validates :size, presence: true
 
-  attr_accessor :title
-
-  def my_title
-    @title = 'rabbits'
-  end
-
 end
