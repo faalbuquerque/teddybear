@@ -4,21 +4,4 @@
 
 <%= render "shared/errors", animal: @bear %>
 
-<%= form_with model: @bear, local:true do |f| %>
-
-  <p>
-    <%= f.label :name, 'Nome' %>
-    <%= f.text_field :name %>
-
-    <%= f.select(:size, ['Pequeno', 'Médio', 'Grande', 'Gigante'], {include_blank: 'Tamanho'}, { :style => '' }) %>
-   
-    <%= f.label :color, 'Cor' %>
-    <%= f.color_field(:color) %>
-
-    <%= f.label :image, 'Adicionar imagem' %>
-    <%= f.file_field :image %>
-    
-  </p><br>
-
-  <%= f.submit "Alterar" %>
-<% end %>
+<%= render "form"%>

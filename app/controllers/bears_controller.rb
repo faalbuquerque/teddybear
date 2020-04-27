@@ -1,4 +1,5 @@
 class BearsController < ApplicationController
+  before_action :find_bear, only: [:show, :edit, :update, :destroy]
 
   def index
     @bears = Bear.all
@@ -16,22 +17,18 @@ class BearsController < ApplicationController
   end
 
   def show
-    @bear = Bear.find(params[:id])
   end
 
   def edit
-    @bear = Bear.find(params[:id])
   end
 
   def update
-    @bear = Bear.find(params[:id])
 
     return redirect_to bear_path(@bear) if @bear.update(bear_params)
     render :edit 
   end
 
   def destroy
-    @bear = Bear.find(params[:id])
 
     return redirect_to bears_path if @bear.delete
     render bears_path
@@ -43,4 +40,7 @@ class BearsController < ApplicationController
     params.require(:bear).permit(:name, :color, :size, :image)
   end
 
+  def find_bear
+    @bear = Bear.find(params[:id])
+  end
 end
