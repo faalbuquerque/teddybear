@@ -2,31 +2,7 @@
 
 <p style='font-size:20px;'> Cadastrar urso &#128059; </p><hr>
 
-<% if @bear.errors.any? %>
+<%= render "shared/errors", animal: @bear %>
 
-  <% @bear.errors.full_messages.each do |message| %>
-    <p>O campo <%= t(message) %></p>
-  <% end %>
-
-<% end %>
-
-<%= form_with model: @bear, local:true do |f| %>
-
-  <p>
-    <%= f.label :name, 'Nome' %>
-    <%= f.text_field :name %>
-
-    <%= f.select(:size, ['Pequeno', 'Médio', 'Grande', 'Gigante'], {include_blank: 'Tamanho'}, { :style => '' }) %>
-
-    <%= f.label :color, 'Cor' %>
-    <%= f.color_field(:color) %>
-
-    <%= f.label :image, 'Adicionar imagem' %>
-    <%= f.file_field :image %>
-    
-  </p><br>
-
-  <%= f.submit "Adicionar" %>
-<% end %>
-
+<%= render "form"%>
 
