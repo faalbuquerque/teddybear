@@ -23,13 +23,11 @@ class BearsController < ApplicationController
   end
 
   def update
-
     return redirect_to bear_path(@bear) if @bear.update(bear_params)
     render :edit 
   end
 
   def destroy
-
     return redirect_to bears_path if @bear.delete
     render bears_path
   end
